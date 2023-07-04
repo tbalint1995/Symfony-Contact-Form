@@ -1,0 +1,43 @@
+{{ form_start(form , {'attr': {'class': 'col-6 border shadow mx-auto p-3 mb-5'}} ) }}
+  
+</ul>
+    <div class="row g-3">
+        <div class="col-12">
+           {{ form_label(form.name, 'Name') }}
+            <input
+                name="{{ field_name(form.name) }}"
+                value="{{ field_value(form.name) }}"
+                placeholder="{{ field_label(form.name) }}"
+                class="form-control"
+            />
+               <span class="text-danger">{{ form_errors(form.name) }}</span>
+        </div>
+
+        <div class="col-12">
+           {{ form_label(form.email, 'E-mail') }}
+            <input
+                name="{{ field_name(form.email) }}"
+                value="{{ field_value(form.email) }}"
+                placeholder="{{ field_label(form.email) }}"
+                class="form-control"
+            />
+             <span class="text-danger">{{ form_errors(form.email) }}</span>
+        </div>
+   
+
+        <div class="col-12">
+           {{ form_label(form.message, 'Message') }}
+            <textarea
+                name="{{ field_name(form.message) }}"
+                placeholder="{{ field_label(form.message) }}"
+                class="form-control"
+            />{{ field_value(form.message) }}</textarea>
+             <span class="text-danger">{{ form_errors(form.message) }}</span>
+        </div>
+
+        <div class="col-12 text-center">
+           <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+        </div>
+</div>
+   
+{{ form_end(form) }}
